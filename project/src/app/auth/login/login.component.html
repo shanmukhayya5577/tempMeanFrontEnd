@@ -1,0 +1,35 @@
+<div class="container-fluid h-100 login-background">
+  <div class="row my-auto ml-5 mr-1 h-100">
+    <div class="card-container col-md-5 align-self-center col-xl-4 col-lg-5">
+      <mat-card>
+        <form [formGroup]="LoginForm" (ngSubmit)="LoginSubmit()">
+          <h3 class="font-weight-bold text-center">Please Login here</h3>
+
+          <div class="col-12">
+            <div class="form-group py-2">
+              <label>Please Enter Your E-mail</label>
+              <input class="form-control" type="email" placeholder="Your name" formControlName="email" required>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-group py-2">
+              <label>Please Enter Your Password</label>
+              <input class="form-control" type="password" placeholder="Your name" formControlName="password" required>
+            </div>
+          </div>
+
+          <div class="d-grid py-3 pb-1">
+            <button type="submit" class="btn btn-primary" [disabled]="this.LoginForm.invalid">Submit</button>
+          </div>
+
+          <div class="text-center">
+            <h5>No Account? <span><a style="color: rgb(245, 89, 115);text-decoration: underline;cursor: pointer;"
+            (click)="register()">Register</a></span> </h5>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+
+</div>

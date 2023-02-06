@@ -1,0 +1,76 @@
+<div class="container-fluid register-body h-100" style="background-image: url('../../../assets/register.jpg');">
+  <div class="row my-auto ml-5 mr-1 h-100">
+    <div class="card-container col-md-5 col-xl-4 col-lg-5 align-self-center my-auto offset-md-7 offset-xl-8 offset-lg-7">
+      <mat-card class="login-card p-2">
+        <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+          <h3 class="font-weight-bold text-center">Please Register here</h3>
+
+          <div class="col-12">
+            <div class="form-group py-2">
+              <label>Please Enter Your Name</label>
+              <input class="form-control" type="text" placeholder="Your name" formControlName="name"
+              [ngClass]="{'is-invalid':submitted}"
+              >
+              <span class="text-danger invalid-feedback" *ngIf="name?.invalid && submitted">
+                Name is required
+              </span>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-group py-2">
+              <label>Please Enter Your E-mail</label>
+              <input class="form-control" type="email" placeholder="Your name" formControlName="email"
+              [ngClass]="{'is-invalid':submitted}">
+              <span class="text-danger invalid-feedback" *ngIf="email?.invalid && submitted">
+                E-mail is required
+              </span>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-group py-2">
+              <label>Please Enter Your Password</label>
+              <input class="form-control" type="password" placeholder="Your name" formControlName="password"
+              [ngClass]="{'is-invalid':submitted}">
+              <span class="text-danger invalid-feedback" *ngIf="password?.invalid && submitted">
+                Password is required
+              </span>
+            </div>
+          </div>
+
+          <div class="d-grid py-3 pb-1">
+            <button  [ngClass]="registerForm.valid ? 'primary-active' : 'primary-disabled' "
+            type="submit" class="btn">Submit</button>
+          </div>
+          <div class="text-center">
+            <h5>Already Register? <span><a style="color: rgb(245, 89, 115);text-decoration: underline;cursor: pointer;"
+              (click)="login()">Login</a></span> </h5>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container-fluid register-body h-100" style="background-image: url('../../../assets/register.jpg');">
+  <div class="row my-auto ml-5 mr-1 h-100">
+    <div class="card-container col-md-5 col-xl-4 col-lg-5 align-self-center my-auto offset-md-7 offset-xl-8 offset-lg-7">
+      <mat-card class="login-card p-2">
+        <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+          <h3 class="font-weight-bold text-center">Please Register here</h3>
+          <div class="col-12">
+            <div class="col-md-3 col-lg-4">
+              <div class="inputField">
+                <input placeholder=" " formControlName="name" class="floating" type="text">
+                <span>Name</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div> -->
+
