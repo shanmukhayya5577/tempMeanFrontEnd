@@ -10,7 +10,7 @@ import { AuthserviceService } from 'src/app/service/authservice.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  LoginForm!:FormGroup;
+  LoginForm:any=FormGroup;
   submitted!:false;
 
   constructor(private fb:FormBuilder,private route:Router,
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.LoginForm = this.fb.group({
-      email:this.fb.control('',[Validators.required]),
+      email:this.fb.control('',[Validators.required,Validators.pattern('a-z')]),
       password:this.fb.control('',[Validators.required])
     })
   }

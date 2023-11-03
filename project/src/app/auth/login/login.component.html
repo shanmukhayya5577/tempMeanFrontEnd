@@ -8,9 +8,14 @@
           <div class="col-12">
             <div class="form-group py-2">
               <label>Please Enter Your E-mail</label>
+
               <input class="form-control" type="email" placeholder="Your name" formControlName="email" required>
+              <div *ngIf="LoginForm?.get('email')?.errors?.pattren">
+
+              </div>
             </div>
           </div>
+          {{LoginForm?.get('email')?.value.pattren}}
 
           <div class="col-12">
             <div class="form-group py-2">
@@ -20,7 +25,7 @@
           </div>
 
           <div class="d-grid py-3 pb-1">
-            <button type="submit" class="btn btn-primary" [disabled]="this.LoginForm.invalid">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </div>
 
           <div class="text-center">
